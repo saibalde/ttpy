@@ -50,7 +50,7 @@ PRINT_SRC = [
 
 
 def configuration(parent_package='', top_path=None):
-    plat_specifier = ".%s-%s" % (get_platform(), sys.version[0:3])
+    plat_specifier = ".%s-%s" % (get_platform(), '.'.join(sys.version.split()[0].split('.')[:2]))
     inc_dir = ['build/temp%s' % plat_specifier]
 
     config = Configuration('tt', parent_package, top_path)
